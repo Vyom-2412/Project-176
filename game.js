@@ -2,12 +2,12 @@ let words = [
     {
         "inputs": 5,
         "category": "Sports",
-        "word": "Chess"
+        "word": "chess"
     },
     {
         "inputs": 6,
         "category": "European Country Name",
-        "word": "France"
+        "word": "france"
     },
 ]
 
@@ -45,7 +45,7 @@ function fillBlanks() {
         //Loop through all the letters 
         for (var i = 0; i < randomWord.word.length; i++) {
             //Check if the character matches the id of the button
-            if (randomWord.word.charAt(i).toLowerCase() == id) {
+            if (randomWord.word.charAt(i) == id) {
                 //Check if the life is still left and blank is is empty/already filled
                 if (life > 0 && ($(".fill_blanks").eq(i).html() == "_" || $(".fill_blanks").eq(i).html() == id)) {
                     //fill blanks
@@ -53,7 +53,7 @@ function fillBlanks() {
                     correctGuess = true;
 
                     //Check if the word guess is complete
-                    if ($("#blanks").text() === randomWord.word.toLowerCase()) {
+                    if ($("#blanks").text() === randomWord.word) {
                         $("#result").text("You Win!!")
                         correctGuess = true;
                         gameOver=true
